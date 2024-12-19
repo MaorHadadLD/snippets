@@ -39,14 +39,12 @@ export async function createSnippet(formState: {message: string}, FormData: Form
 
 
             // Create a new record in the database
-                // const snippet = await db.snippet.create({
-                //     data: {
-                //      title,
-                //       code
-                //     },
-                // });
-                //     console.log(snippet);
-                throw new Error('Faild to save to database.');
+                 await db.snippet.create({
+                    data: {
+                     title,
+                      code
+                    },
+                });
             } catch (err: unknown) {
                 if (err instanceof Error) {
                     return {
